@@ -54,92 +54,7 @@ Sample Output
 
 """
 
-
-class Node:
-    """
-    Class Node
-    """
-    def __init__(self, value):
-        self.children = []
-        self.data = value
-
-class Tree:
-    """
-    Class tree will provide a tree as well as utility functions.
-    """
-    def __init__(self, node):
-        self.root = node
-
-    def createNode(self, data):
-        """
-        Utility function to create a node.
-        """
-        return Node(data)
-
-    def insert(self, parent, node):
-        """
-        Insert function will insert a node into list of children of node
-        """
-        parent.children.append(node)
-        return None                   
-
-    def search_node(self, root, data):
-    
-        found = False
-        for node in root.children:
-            if node.data == data:
-                return node
-
-        result = None
-        if found == False:
-            for node in root.children:
-                result = self.search_node(node, data)
-        return result
-        
-
-
-
-def Main():
-    q = int(input())
-
-    out = ['' for i in range(q)]
-
-    for _ in range(q):
-        n,m = map(int,input().split())
-        v1,v2 = map(int,input().split())
-    
-        node = Node(v1)
-        tree = Tree(node)
-        root = tree.root
-        
-        tree.insert(root,Node(v2))
-        
-        renegades = []
-
-        for i in range(m-1):  
-            v1,v2 = map(int,input().split())
-            parent = tree.search_node(root, v1)
-            child = tree.search_node(root, v2)
-            if not child:
-                child = Node(v1)
-            if parent:
-                tree.insert(parent, child)
-            else:
-                parent=Node(v1)
-                renegades.append(parent)
-                renegades.append(child)
-
-        while i<len(renegades):
-            parent = renegades[i]
-            child = renegades[i+1]
-            tree.insert(parent,child)
-            i+=2
-
-        print("Root data -> " , root.data)
-        for i in root.children:
-            print("Child " + str(i) +" -> ", i.data)
-
-"""        
+"""
 2
 4 2
 1 2
@@ -148,41 +63,66 @@ def Main():
 3 1
 2 3
 2
-
-                
-        s = int(input())
-
-        snode = tree.search_node(root,s)
-          
-   
-        distances = [-1 for _ in range(n)]
-        for i in range(n): 
-            if snode.data != i+1 : 
-                print("Finding distance from " + str(i+1))
-                queue = []
-                queue.append(snode)
-                steps = 0
-                found = -1
-                while(queue):
-                    print("Steps so far: " + str(steps))
-                    node = queue.pop(0)
-                    if node.data == i+1 : 
-                        found=node.data
-                        break
-                    steps+=1
-                    if node.left != None :
-                        queue.append(node.left)    
-                    if node.right != None :
-                        queue.append(node.right)
-                if found !=-1 :
-                    distances[found-1] = steps*6
-        
-    
-        temp = [distances[d] for d in range(n)]# if d!=s-1)]
-
-        out[_] = str(temp)
-    print(out)
 """
+
+def Main():
+    q = int(input())
+    res = [] 
+    for _ in range(q):
+        nodes, edges = map(int,input().split())
+
+        graph = {}
+        for i in range(nodes+1):
+            graph[i] = []
+        for i in range(edges):
+            v1,v2 = map(int,input().split())
+            if v1 in graph and v2 in graph[v1]:
+                graph[v2].append(v1)
+            else:
+                graph[v1].append(v2)
+
+        start = int(input())
+    
+        edges = generate_edges(graph)
+        distances = [ -1 for _ in range(nodes) ]
+        
+        direct = []
+        for edge in edges:
+            if edge[0] == start:
+                distances[edge[1]-1] = 6
+                direct.append(edge[1])
+        for v in direct:
+            calculateDistance(distances, v, edges, 2, 6*nodes)            
+
+        s = ''
+        for i in range(len(distances)):
+            if i != start-1:
+                s += str(distances[i]) + ' '
+        res.append(s)
+    for r in res:
+        print(r)
+
+def calculateDistance(distances, v, edges, dist, maxDis):
+    direct = []
+    if(dist*6 < maxDis):
+        for edge in edges:
+            if edge[0] == v:
+                if distances[edge[1]-1] > dist*6 or distances[edge[1]-1] < 0:
+                    distances[edge[1]-1] = dist * 6
+                    direct.append(edge[1])
+        for v in direct:
+            calculateDistance(distances, v, edges, dist+1, maxDis)
+
+    
+
+
+def generate_edges(graph):
+    edges = []
+    for node in graph:
+        for neighbour in graph[node]:
+            edges.append((node, neighbour))
+
+    return edges
 
 
 if __name__=="__main__":
