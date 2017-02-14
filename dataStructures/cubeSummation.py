@@ -17,20 +17,24 @@ for _ in range(reps):
     n,ops = map(int, input().split())
 
     a = [ [[0 for _ in range(n)] for _ in range(n)] for _ in range(n)]
+    updated = set()
     for op in range(ops):
         s = input()
         if s[0] == 'U':
-            pos= list(map(int,s[6:].split()))
-            a[pos[0]-1][pos[1]-1][pos[2]-1] = pos[3]
+            x,y,z, value= list(map(int,s[6:].split()))
+            a[x-1][y-1][z-1] = value
+            updated.add((x-1, y-1, z-1))
         else:
             suma = 0
             p = list(map(int,s[5:].split()))
-            for i in range(len(p)):
-                p[i] = p[i] -1
-            for i in range(p[0],p[3]+1):
-                for j in range(p[1],p[4]+1):
-                    for k in range(p[2],p[5]+1):
-                        suma+= a[i][j][k]
+            x1,y1,z1,x2,y2,z2 = p
+            cells = []
+            for (x,y,z) in updated:
+                if x1-1 <= x and x2 > x and y1-1 <= y and y2 > y and z >= z1-1 and z < z2:
+                    cells.append((x,y,z))
+            for (x,y,z) in cells:
+                suma += a[x][y][z]
+                
             sums.append(suma)
     
 for i in sums:
