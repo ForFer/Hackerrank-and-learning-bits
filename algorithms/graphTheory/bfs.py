@@ -65,65 +65,79 @@ Sample Output
 2
 """
 
-def Main():
-    q = int(input())
-    res = [] 
-    for _ in range(q):
-        nodes, edges = map(int,input().split())
+class Graph():
+    def __init__(self, g_dict=None):
+        if not g_dict:
+            g_dict = {}
+        self.g_dict = g_dict
 
-        graph = {}
-        for i in range(nodes+1):
-            graph[i] = []
-        for i in range(edges):
-            v1,v2 = map(int,input().split())
-            if v1 in graph and v2 in graph[v1]:
-                graph[v2].append(v1)
+    def insert(self, parent, node):
+        if parent not in self.g_dict:
+            self.g_dict[parent] = [node]
+        else:
+            self.g_dict[parent].append(node)
+
+    def __str__(self):
+        res = ''
+        for k in self.g_dict:
+            res+= str(k) + ": {"
+            for n in self.g_dict[k]:
+                res+= str(n) + ", "
+            res += "} \n"
+        return res
+
+    def distances(self, start):
+
+        q = [start]
+        d = {start:0}
+
+        while q:
+            u = q.pop()
+            for v in self.g_dict[u]:
+                if v not in d:
+                    d[v] = d[u]+6
+                    q.append(v)
+        return d
+
+    def __getitem__(self, index):
+        return self.g_dict[index]
+
+
+q = int(input())
+
+res = []
+
+for _ in range(q):
+    
+    nodes,edges = map(int, input().split())
+    myDict = {}
+    for i in range(1, nodes+1):
+        myDict[i] = []
+    myGraph = Graph(myDict)
+    
+
+    for _ in range(edges):
+        p,c = map(int,input().split())
+        if c not in myGraph[p]:
+            myGraph.insert(p,c)
+            myGraph.insert(c,p)
+
+    start = int(input())
+
+    if start > nodes or start < 0:
+        dis = [-1 for _ in range(nodes)]
+        res.append(dis)
+        continue
+
+    d = myGraph.distances(start)
+    dis = []
+    for i in range(1,nodes+1):
+        if i!=start:
+            if i in d:
+                dis.append(d[i])    
             else:
-                graph[v1].append(v2)
+                dis.append(-1)
+    res.append(dis)
 
-        start = int(input())
-    
-        edges = generate_edges(graph)
-        distances = [ -1 for _ in range(nodes) ]
-        
-        direct = []
-        for edge in edges:
-            if edge[0] == start:
-                distances[edge[1]-1] = 6
-                direct.append(edge[1])
-        for v in direct:
-            calculateDistance(distances, v, edges, 2, 6*nodes)            
-
-        s = ''
-        for i in range(len(distances)):
-            if i != start-1:
-                s += str(distances[i]) + ' '
-        res.append(s)
-    for r in res:
-        print(r)
-
-def calculateDistance(distances, v, edges, dist, maxDis):
-    direct = []
-    if(dist*6 < maxDis):
-        for edge in edges:
-            if edge[0] == v:
-                if distances[edge[1]-1] > dist*6 or distances[edge[1]-1] < 0:
-                    distances[edge[1]-1] = dist * 6
-                    direct.append(edge[1])
-        for v in direct:
-            calculateDistance(distances, v, edges, dist+1, maxDis)
-
-    
-
-
-def generate_edges(graph):
-    edges = []
-    for node in graph:
-        for neighbour in graph[node]:
-            edges.append((node, neighbour))
-
-    return edges
-
-
-if __name__=="__main__":
-    Main()
+for r in res:
+    print(*r)

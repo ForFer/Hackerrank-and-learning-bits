@@ -12,5 +12,8 @@ List of important implementations:
 
 * Binary tree --> outside of folders
 
-* Fenwick/Binary indexed tree --> dataStructures/directConnection.py
+* Fenwick/Binary indexed tree --> BITTree.py (clear, with examples) and dataStructures/directConnection.py
 
+* Kruskal's algorithm --> algorithms/graphTheory
+
+* Graph implementation --> algorithms/graphTheory/bfs.py
