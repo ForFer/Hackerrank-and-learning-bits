@@ -8,7 +8,9 @@ List of important implementations:
 
 * Quicksort --> Algorithms/sorting
 
-* Insertion sort -> Algorithms/sorting
+* Insertion sort --> Algorithms/sorting
+
+* Bubble sort --> 30-Day/day20Sorting.py
 
 * Binary tree --> outside of folders
 
