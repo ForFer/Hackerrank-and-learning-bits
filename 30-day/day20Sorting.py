@@ -9,7 +9,7 @@ Given an array, print number of swaps, first and last element after performing
 buble sort
 """
 
-def bubleSort(arr):
+def bubbleSort(arr):
     swaps = 0
     for i in range(len(arr)):
         for j in range(len(arr)-1):
@@ -28,7 +28,7 @@ n = int(input().strip())
 a = [int(a_temp) for a_temp in input().split()]
 
 
-swaps, first, last = bubleSort(a)
+swaps, first, last = bubbleSort(a)
 print("Array is sorted in %d swaps." % swaps)
 print("First Element:", first)
 print("Last Element:", last)
