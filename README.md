@@ -22,4 +22,4 @@ List of important implementations:
 
 * Classification and Regrestion Tree (CART) --> artificialIntelligence/machineLearning/laptopBatteryLife.py 
 
-* Prime checker in O($\sqrt(n)) --> 30-day/25-RunningTime.py
+* Prime checker in O(sqrt{n}) --> 30-day/25-RunningTime.pyyy
