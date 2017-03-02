@@ -12,10 +12,14 @@ List of important implementations:
 
 * Bubble sort --> 30-Day/day20Sorting.py
 
-* Binary tree --> outside of folders
+* Binary tree --> outside of folders (with level-order traversal, bfs extraction, height calculation)
 
 * Fenwick/Binary indexed tree --> BITTree.py (clear, with examples) and dataStructures/directConnection.py
 
 * Kruskal's algorithm --> algorithms/graphTheory
 
 * Graph implementation --> algorithms/graphTheory/bfs.py
+
+* Classification and Regrestion Tree (CART) --> artificialIntelligence/machineLearning/laptopBatteryLife.py 
+
+* Prime checker in O($\sqrt(n)) --> 30-day/25-RunningTime.py

@@ -4,8 +4,8 @@ class Node:
     """
     def __init__(self, value):
         self.left = None
-        self.data = value
         self.right = None
+        self.data = value
 
 class Tree:
     """
@@ -52,7 +52,26 @@ class Tree:
 
         return None
 
+    def level_order_traversal(self, root):
+        q = []
+        order = []
+        q.append(root)
+        while q:
+            node = q.pop(0)
+            order.append(node.data)
+            if node.left:
+                q.append(node.left)
+                
+            if node.right:
+                q.append(node.right)
+                
+        return order
 
+    def getHeight(self,root):
+        if not root:
+            return -1
+        else:
+            return 1+max(self.getHeight(root.left), self.getHeight(root.right)
         
 
 def Main():
