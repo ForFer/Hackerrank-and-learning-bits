@@ -22,7 +22,7 @@ List of important implementations:
 
 * Graph implementation using adjacency matrix --> algorithms/graphTheory/primsSpecialSubtree.py
 
-* Prim's algorithm --> algorithms/graphTheory/primsSpecialSubtree.py
+* Prim's algorithm --> algorithms/graphTheory/primsSpecialSubtree.py (TODO:user another data structure to improve efficiency)
 
 * Classification and Regrestion Tree (CART) --> artificialIntelligence/machineLearning/laptopBatteryLife.py 
 
