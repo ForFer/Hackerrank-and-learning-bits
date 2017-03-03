@@ -20,6 +20,10 @@ List of important implementations:
 
 * Graph implementation --> algorithms/graphTheory/bfs.py
 
+* Graph implementation using adjacency matrix --> algorithms/graphTheory/primsSpecialSubtree.py
+
+* Prim's algorithm --> algorithms/graphTheory/primsSpecialSubtree.py
+
 * Classification and Regrestion Tree (CART) --> artificialIntelligence/machineLearning/laptopBatteryLife.py 
 
 * Prime checker in O(sqrt{n}) --> 30-day/25-RunningTime.pyyy

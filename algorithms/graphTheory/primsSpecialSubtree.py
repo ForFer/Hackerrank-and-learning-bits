@@ -54,4 +54,70 @@ Sample Output 0
 
 """
 
+    
+def findLowest(start, weights, visited):
+        
+    lowest = 10**6
+    node = 0
+    for i in range(len(weights[start])):
+        if weights[start][i] < lowest and visited[i] != -1 and weights[start][i]!=-1:
+            lowest = weights[start][i]
+            node = i
+
+    return lowest,node
+
+#Graph implementation using adjacency matrix and weights matrix
+n_nodes, n_edges = map(int, input().split())
+
+nodes = [[0 for _ in range(n_nodes)] for _ in range(n_nodes) ]
+weights = [[-1 for _ in range(n_nodes)] for _ in range(n_nodes) ]
+
+for i in range(n_edges):
+    x,y,weight = map(int,input().split())
+    x-=1
+    y-=1
+    nodes[x][y] = 1
+    nodes[y][x] = 1
+    if weights[x][y] == -1 :
+        weights[x][y] = weight
+        weights[y][x] = weight
+    elif weights[x][y] != -1 and weight < weights[x][y]:
+        weights[x][y] = weight
+        weights[y][x] = weight
+
+start = int(input())
+
+visited = [i for i in range(n_nodes)]
+cost = 0
+
+current = start-1
+visited[current] = -1
+
+while visited.count(-1) < n_nodes:
+    low = []
+    nodes = []
+    fromNode = []
+    for i in range(len(visited)):
+        if visited[i] == -1:
+            temp, newNode = findLowest(i, weights, visited)
+            low.append(temp)
+            nodes.append(newNode)
+            fromNode.append(i)
+
+    minLow = min(low)
+    previous = fromNode[low.index(minLow)]
+    current = nodes[low.index(minLow)]    
+    cost+= minLow
+    weights[previous][current] = -1
+    weights[current][previous] = -1
+    visited[current] = -1
+    
+    
+print(cost)
+
+
+
+
+
+
 
