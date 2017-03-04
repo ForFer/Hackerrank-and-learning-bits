@@ -27,3 +27,7 @@ List of important implementations:
 * Classification and Regrestion Tree (CART) --> artificialIntelligence/machineLearning/laptopBatteryLife.py 
 
 * Prime checker in O(sqrt{n}) --> 30-day/25-RunningTime.pyyy
+
+* Linear regression --> linearRegression.py
+
+* Support vector regression (non-linear) --> supportVectorRegression.py

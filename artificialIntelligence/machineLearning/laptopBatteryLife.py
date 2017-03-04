@@ -15,7 +15,7 @@ after watching his TV shows accordingly.
 
 Challenge
 
-You will be able to access Fred’s laptop charging log by reading from the file
+You will be able to access Fred's laptop charging log by reading from the file
 “trainingdata.txt”. The training data file will consist of 100 lines, each with
 2 comma-separated numbers. The first number denotes the amount of time the
 laptop was charged and the second denotes the amount of time the battery lasted.
@@ -41,51 +41,36 @@ your score will be 10-(1+2) = 7.
 """
 
 import pandas
-from pandas.tools.plotting import scatter_matrix
 import matplotlib.pyplot as plt
+import numpy as np
 
-from sklearn import model_selection
-from sklearn.metrics import classification_report
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import accuracy_score
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-from sklearn.naive_bayes import GaussianNB
-from sklearn.svm import SVC
+from sklearn.svm import SVR
 
-url = "laptopBatteryData.txt"
+#url = "laptopBatteryData.txt"
+url= "https://s3.amazonaws.com/hr-testcases/399/assets/trainingdata.txt"
 names = ["class", "hours"]
 dataset = pandas.read_csv(url, names=names)
 
-#print(dataset.shape)
-#print(dataset.describe())
-#print(dataset.head(20))
+arr = sorted(dataset.values, key=lambda a:a[1])
+X = np.array([x[0] for x in arr])
+X.sort()
+X = X.reshape(-1,1)
+y = np.array([y[1] for y in arr]).ravel()
 
-#dataset.hist()
-#plt.show()
+svr_rbf = SVR(kernel='rbf', C=1e3, gamma=0.1)
+y_rbf = svr_rbf.fit(X, y).predict(X)
 
-arr = dataset.values
-X = [x[0] for x in arr]
-Y = [y[1] for y in arr]
-validation_size = 20
-seed = 13
+n = float(input())
 
-X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(X, Y, test_size=validation_size, random_state=seed)
-
-scoring='accuracy'
-
-model = DecisionTreeClassifier()
-name = 'CART'
-
-kfold = model_selection.KFold(n_splits=10, random_state=seed)
-cv_results = model_selection.cross_val_score(model, X_train, Y_train,
-cv=kfold, scoring=scoring)
-results.append(cv_results)
-names.append(name)
-msg = "%s: %f (%f)" % (name, cv_results.mean(), cv_results.std())
-print(msg)
-
-
-
+print(svr_rbf.predict(np.array([n]).reshape(-1,1)))
+"""
+lw = 2
+plt.scatter(X, y, color='darkorange', label='data')
+plt.hold('on')
+plt.plot(X, y_rbf, color='navy', lw=lw, label='RBF model')
+plt.xlabel('data')
+plt.ylabel('target')
+plt.title('Support Vector Regression')
+plt.legend()
+plt.show()
+"""
