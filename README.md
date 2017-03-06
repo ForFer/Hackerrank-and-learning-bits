@@ -40,5 +40,4 @@ List of important implementations:
 
 ##Others
 
-* [Prime checker in
-* O(sqrt{n})](https://github.com/ForFer/Hackerrank/blob/master/implementation/primeChecker.py)
+* [Prime checker in O(sqrt{n})](https://github.com/ForFer/Hackerrank/blob/master/implementation/primeChecker.py)y)
