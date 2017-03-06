@@ -6,30 +6,39 @@ Most of the solutions (if not all) will be in python.
 
 List of important implementations:
 
-* Quicksort --> Algorithms/sorting
+##Sorting
+* [Quicksort](https://github.com/ForFer/Hackerrank/blob/master/algorithms/sorting/quicksort2Sorting.py)
 
-* Insertion sort --> Algorithms/sorting
+* [Insertion sort](https://github.com/ForFer/Hackerrank/blob/master/algorithms/sorting/insertionSortPart2.py)
 
-* Bubble sort --> 30-Day/day20Sorting.py
+* [Bubble sort](https://github.com/ForFer/Hackerrank/blob/master/implementation/20-Sorting.py)
 
-* Heapsort --> heapsort.py
+* [Heapsort](https://github.com/ForFer/Hackerrank/blob/master/implementation/heapsort.py)
 
-* Binary tree --> outside of folders (with level-order traversal, bfs extraction, height calculation)
+##Trees
+* [Binary tree](https://github.com/ForFer/Hackerrank/blob/master/implementation/btree.py)
 
-* Fenwick/Binary indexed tree --> BITTree.py (clear, with examples) and dataStructures/directConnection.py
+* [Fenwick/Binary indexed tree (Clear, with examples)](https://github.com/ForFer/Hackerrank/blob/master/implementation/BITtree.py)
 
-* Kruskal's algorithm --> algorithms/graphTheory
+* [Fenwick/Binary indexed tree (with a hackerrank problem)](https://github.com/ForFer/Hackerrank/blob/master/dataStructures/directConnection.py)
 
-* Graph implementation --> algorithms/graphTheory/bfs.py
+##Graphs
+* [Kruskal's algorithm](https://github.com/ForFer/Hackerrank/blob/master/algorithms/graphTheory/kruskal.py)
 
-* Graph implementation using adjacency matrix --> algorithms/graphTheory/primsSpecialSubtree.py
+* [Graph implementation using classes](https://github.com/ForFer/Hackerrank/blob/master/algorithms/graphTheory/bfs.py)
 
-* Prim's algorithm --> algorithms/graphTheory/primsSpecialSubtree.py (TODO:user another data structure to improve efficiency)
+* [Graph implementation using adjacency matrix](https://github.com/ForFer/Hackerrank/blob/master/algorithms/graphTheory/primsSpecialSubtree.py)
 
-* Classification and Regrestion Tree (CART) --> artificialIntelligence/machineLearning/laptopBatteryLife.py 
+* [Prim's algorithm (same as graph with adjacency matrix)](https://github.com/ForFer/Hackerrank/blob/master/algorithms/graphTheory/primsSpecialSubtree.py)
 
-* Prime checker in O(sqrt{n}) --> 30-day/25-RunningTime.pyyy
+##Machine learning
+* [Classification and Regrestion Tree (CART)](https://github.com/ForFer/Hackerrank/blob/master/artificialIntelligence/machineLearning/laptopBatteryLife.py)
 
-* Linear regression --> linearRegression.py
+* [Linear regression](https://github.com/ForFer/Hackerrank/blob/master/implementation/linearRegression.py)
 
-* Support vector regression (non-linear) --> supportVectorRegression.py
+* [Support vector regression (non-linear)](https://github.com/ForFer/Hackerrank/blob/master/implementation/supportVectorRegression.py)
+
+##Others
+
+* [Prime checker in
+* O(sqrt{n})](https://github.com/ForFer/Hackerrank/blob/master/implementation/primeChecker.py)
