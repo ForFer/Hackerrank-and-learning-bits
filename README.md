@@ -12,6 +12,8 @@ List of important implementations:
 
 * Bubble sort --> 30-Day/day20Sorting.py
 
+* Heapsort --> heapsort.py
+
 * Binary tree --> outside of folders (with level-order traversal, bfs extraction, height calculation)
 
 * Fenwick/Binary indexed tree --> BITTree.py (clear, with examples) and dataStructures/directConnection.py

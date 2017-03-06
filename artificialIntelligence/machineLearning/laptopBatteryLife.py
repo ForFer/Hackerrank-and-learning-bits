@@ -63,14 +63,3 @@ y_rbf = svr_rbf.fit(X, y).predict(X)
 n = float(input())
 
 print(svr_rbf.predict(np.array([n]).reshape(-1,1)))
-"""
-lw = 2
-plt.scatter(X, y, color='darkorange', label='data')
-plt.hold('on')
-plt.plot(X, y_rbf, color='navy', lw=lw, label='RBF model')
-plt.xlabel('data')
-plt.ylabel('target')
-plt.title('Support Vector Regression')
-plt.legend()
-plt.show()
-"""
