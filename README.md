@@ -33,6 +33,8 @@ List of important implementations:
 
 * [Prim's algorithm (same as graph with adjacency matrix)](https://github.com/ForFer/Hackerrank/blob/master/algorithms/graphTheory/primsSpecialSubtree.py)
 
+* [Floyd-Warshal](https://github.com/ForFer/Hackerrank/blob/master/implementation/floyd.py)
+
 ##Machine learning
 * [Classification and Regrestion Tree (CART)](https://github.com/ForFer/Hackerrank/blob/master/artificialIntelligence/machineLearning/laptopBatteryLife.py)
 
