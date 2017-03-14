@@ -35,6 +35,8 @@ List of important implementations:
 
 * [Floyd-Warshal](https://github.com/ForFer/Hackerrank/blob/master/implementation/floyd.py)
 
+* [Bellman-Ford](https://github.com/ForFer/Hackerrank/blob/master/implementation/bellmanford.py)
+
 ##Machine learning
 * [Classification and Regrestion Tree (CART)](https://github.com/ForFer/Hackerrank/blob/master/artificialIntelligence/machineLearning/laptopBatteryLife.py)
 

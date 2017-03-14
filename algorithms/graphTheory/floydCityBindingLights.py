@@ -53,12 +53,12 @@ Sample Output
 11
 
 """
-
+import time
 
 n_nodes, n_edges = map(int, input().split())
 
 nodes = [[0 for _ in range(n_nodes)] for _ in range(n_nodes) ]
-weights = [[10e7 for _ in range(n_nodes)] for _ in range(n_nodes) ]
+weights = [[1000 for _ in range(n_nodes)] for _ in range(n_nodes) ]
 
 for i in range(n_edges):
     x,y,weight = map(int,input().split())
@@ -66,21 +66,57 @@ for i in range(n_edges):
     y-=1
     nodes[x][y] = 1 
     weights[x][y] = weight
-
+times = []
+start_time = time.time()
 
 for i in range(len(nodes)):
     for j in range(len(nodes)):
+        irow = weights[i]
         for k in range(len(nodes)):
+            krow = weights[k]
             if weights[i][j] > weights[i][k]+weights[k][j]:
                 weights[i][j] = weights[i][k]+weights[k][j]
+
+times.append("--- normal way:  %seconds ---" %(time.time()-start_time))
+
+
+weights = [[1000 for _ in range(n_nodes)] for _ in range(n_nodes) ]
+start_time = time.time()
+
+for i in range(len(nodes)):
+    for j in range(len(nodes)):
+        irow = weights[i]
+        for k in range(len(nodes)):
+            krow = weights[k]
+            if irow[j] > irow[k]+krow[j]:
+                weights[i][j] = irow[k]+krow[j]
+
+times.append("--- irow/krow way:  %seconds ---" %(time.time()-start_time))
+
+weights = [[1000 for _ in range(n_nodes)] for _ in range(n_nodes) ]
+start_time = time.time()
+
+for i in range(len(nodes)):
+    for j in range(len(nodes)):
+        if i==j:
+            continue
+        irow = weights[i]
+        for k in range(len(nodes)):
+            krow = weights[k]
+            if irow[j] > irow[k]+krow[j]:
+                weights[i][j] = irow[k]+krow[j]
+
+times.append("--- i==j way:  %seconds ---" %(time.time()-start_time))
 
 queries = int(input())
 res = []
 for _ in range(queries):
     i,j = map(int, input().split())
     weight = weights[i-1][j-1] if i!=j else 0
-    res.append(weight) if weight!=10e7 else res.append(-1)
+    res.append(weight) if weight!=1000 else res.append(-1)
 
 for r in res:
     print(r) 
 
+for t in times:
+    print(t)
