@@ -1,4 +1,4 @@
-#Hackerrank
+# Hackerrank
 
 Different challenges of hackerrank, with the objective of both, learning how to code better, implement better solutions, and develop my problem solving skills. Every challenge will have the problem description, alongside the input and output expected for the base case
 
@@ -6,7 +6,7 @@ Most of the solutions (if not all) will be in python.
 
 List of important implementations:
 
-##Sorting
+## Sorting
 * [Quicksort](https://github.com/ForFer/Hackerrank/blob/master/algorithms/sorting/quicksort2Sorting.py)
 
 * [Insertion sort](https://github.com/ForFer/Hackerrank/blob/master/algorithms/sorting/insertionSortPart2.py)
@@ -15,7 +15,7 @@ List of important implementations:
 
 * [Heapsort](https://github.com/ForFer/Hackerrank/blob/master/implementation/heapsort.py)
 
-##Trees
+## Trees
 * [Binary tree](https://github.com/ForFer/Hackerrank/blob/master/implementation/btree.py)
 
 * [Fenwick/Binary indexed tree (Clear, with examples)](https://github.com/ForFer/Hackerrank/blob/master/implementation/BITtree.py)
@@ -26,7 +26,7 @@ List of important implementations:
 
 * [Fibonacci Heap (min)](https://github.com/ForFer/Hackerrank/blob/master/implementation/fheap.py)
 
-##Graphs
+## Graphs
 * [Kruskal's algorithm](https://github.com/ForFer/Hackerrank/blob/master/algorithms/graphTheory/kruskal.py)
 
 * [Graph implementation using classes](https://github.com/ForFer/Hackerrank/blob/master/algorithms/graphTheory/bfs.py)
@@ -41,13 +41,13 @@ List of important implementations:
 
 * [Dijkstra](https://github.com/ForFer/Hackerrank/blob/master/implementation/dijkstra.py)
 
-##Machine learning
+## Machine learning
 * [Classification and Regrestion Tree (CART)](https://github.com/ForFer/Hackerrank/blob/master/artificialIntelligence/machineLearning/laptopBatteryLife.py)
 
 * [Linear regression](https://github.com/ForFer/Hackerrank/blob/master/implementation/linearRegression.py)
 
 * [Support vector regression (non-linear)](https://github.com/ForFer/Hackerrank/blob/master/implementation/supportVectorRegression.py)
 
-##Others
+## Others
 
 * [Prime checker in O(sqrt{n}) ](https://github.com/ForFer/Hackerrank/blob/master/implementation/primeChecker.py)
