@@ -1,3 +1,8 @@
+"""
+Only methods search_node, level_order_traversal, and get_height are purely mine.
+The rest, albeit basic, was copied, and therefore I cannot claim ownership
+"""
+
 class Node:
     """
     Class Node
