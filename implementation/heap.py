@@ -9,9 +9,8 @@ import math
 
 class Heap:
 
-    def __init__(self, data = [], min_heap = True):
+    def __init__(self, data = []):
         self.data = data
-        self.min_heap = min_heap
 
     #Min heap, hence 
     def insert(self, data):
@@ -35,16 +34,13 @@ class Heap:
             return self.data[math.floor(child/2)-1]
         except:
             print("could not get parent of child %" % child)
-        pass
 
     def get_min(self):
         return self.data[0]
 
     def get_max(self):
+        return max(self.data[int(len(self.data)/2):]) 
         
-        pass
-
-    
     def delete_root(self):
         #Swap root with last element, and delete it
         root = self.data[0]

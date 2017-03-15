@@ -1,4 +1,4 @@
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+[//]: # <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
 
 #Hackerrank
 
@@ -24,6 +24,10 @@ List of important implementations:
 
 * [Fenwick/Binary indexed tree (with a hackerrank problem)](https://github.com/ForFer/Hackerrank/blob/master/dataStructures/directConnection.py)
 
+* [Heap (min)](https://github.com/ForFer/Hackerrank/blob/master/implementation/heap.py)
+
+* [Fibonacci Heap (min)](https://github.com/ForFer/Hackerrank/blob/master/implementation/fheap.py)
+
 ##Graphs
 * [Kruskal's algorithm](https://github.com/ForFer/Hackerrank/blob/master/algorithms/graphTheory/kruskal.py)
 
@@ -36,6 +40,8 @@ List of important implementations:
 * [Floyd-Warshal](https://github.com/ForFer/Hackerrank/blob/master/implementation/floyd.py)
 
 * [Bellman-Ford](https://github.com/ForFer/Hackerrank/blob/master/implementation/bellmanford.py)
+
+* [Dijkstra](https://github.com/ForFer/Hackerrank/blob/master/implementation/dijkstra.py)
 
 ##Machine learning
 * [Classification and Regrestion Tree (CART)](https://github.com/ForFer/Hackerrank/blob/master/artificialIntelligence/machineLearning/laptopBatteryLife.py)
