@@ -57,12 +57,14 @@ def parent(element):
     return math.floor((element-1)/2) 
 
 def Swap(i,j,l):
-    temp = l[j]
-    l[j] = l[i]
-    l[i] = temp
+    l[j], l[i] = l[i], l[j]
 
+def test():
+    a = [12,-8,68,0,11,3,35,1]  
+    print(a)
+    heapsort(a)
+    print(a)
+    assert a == [-8, 0, 1, 3, 11, 12, 35, 68]
 
-a = [12,-8,68,0, 11, 3, 35, 1]  
-print(a)
-heapsort(a)
-print(a)
+if __name__=="__main__":
+    test()

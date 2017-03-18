@@ -78,11 +78,9 @@ class Heap:
             self.reorganize(newLevel)
         
 
-    #Ol'switcheroo
+    #Ol'switcheroo, pythonic style
     def swap(self, new, old):
-        temp = self.data[old]
-        self.data[old] = self.data[new]
-        self.data[new] = temp
+        self.data[old], self.data[new] = self.data[new], self.data[old]
 
     def __string__():
         print(*self.data)
