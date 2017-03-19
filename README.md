@@ -1,4 +1,4 @@
-# Hackerrank
+# Hackerrank & learning bits
 
 Different challenges of hackerrank, with the objective of both, learning how to code better, implement better solutions, and develop my problem solving skills. Every challenge will have the problem description, alongside the input and output expected for the base case
 
@@ -51,3 +51,5 @@ List of important implementations:
 ## Others
 
 * [Prime checker in O(sqrt{n}) ](https://github.com/ForFer/Hackerrank/blob/master/implementation/primeChecker.py)
+
+* [Idiomatic python](https://github.com/ForFer/Hackerrank/blob/master/implementation/idiomaticPython.py) [Source](https://www.youtube.com/watch?v=OSGv2VnC0go)
