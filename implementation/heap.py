@@ -4,6 +4,7 @@ Github: ForFer
 """
 
 #min Heap implementation
+#TODO?: change data struct of self.data to improve insertion (insert(0) is O(n))
 
 import math
 
