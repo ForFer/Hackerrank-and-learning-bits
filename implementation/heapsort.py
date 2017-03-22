@@ -22,7 +22,7 @@ def heapsort(l):
         end-=1
         shiftDown(l, 0, end)
 
-        print("Iteration", i, ": ", l)
+#       print("Iteration", i, ": ", l)
         i+=1
 
 

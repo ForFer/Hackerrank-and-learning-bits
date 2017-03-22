@@ -20,11 +20,13 @@ List of important implementations:
 
 * [Fenwick/Binary indexed tree (Clear, with examples)](https://github.com/ForFer/Hackerrank/blob/master/implementation/BITtree.py)
 
-* [Fenwick/Binary indexed tree (with a hackerrank problem)](https://github.com/ForFer/Hackerrank/blob/master/dataStructures/directConnection.py)
+* [Fenwick/Binary indexed tree (with a hackerrank problem)](https://github.com/ForFer/Hackerrank/blob/master/dataStructures/tree/directConnection.py)
 
 * [Heap (min)](https://github.com/ForFer/Hackerrank/blob/master/implementation/heap.py)
 
-* [Fibonacci Heap (min)](https://github.com/ForFer/Hackerrank/blob/master/implementation/fheap.py)
+* [Fibonacci Heap (min) {On progress}](https://github.com/ForFer/Hackerrank/blob/master/implementation/fheap.py)
+
+* [Heap for Prim's Algorithm {On Progress}](https://github.com/ForFer/Hackerrank/blob/master/implementation/primHeap.py)
 
 ## Graphs
 * [Kruskal's algorithm](https://github.com/ForFer/Hackerrank/blob/master/algorithms/graphTheory/kruskal.py)

@@ -3,9 +3,15 @@ Author: Fernando Collado
 Github: ForFer
 """
 
-#min Heap implementation
+#min Heap implementation adapted to prim's algorithm
 
 from math import floor
+
+class Node:
+        
+    def __init__(self, label, data):
+        self.data = data
+        self.label = label
 
 class Heap:
 
@@ -13,6 +19,8 @@ class Heap:
         if data is None:
             data = []
         self.data = data
+        self.from_to = {}
+        self.visited = []
 
     #Min heap, hence 
     def insert(self, data):
@@ -25,7 +33,7 @@ class Heap:
     def get_max(self):
         return max(self.data[int(len(self.data)/2):]) 
 
-    def delete_root(self):
+    def extract_min(self):
         #Swap root with last element, and delete it
         root = self.data[0]
         self.data[0] = self.data[len(self.data)-1]
@@ -35,13 +43,6 @@ class Heap:
         self.reheapify( index=int(floor(len(self.data)/2)), option=0 )
 
         return root
-
-#    def delete_item(self, element):
-#        for i,d in enumerate(self.data):
-#            if d == element:
-#                self.data = self.data[:i] + self.data[i+1:]
-#        self.reheapify(index=int(floor(len(self.data)/2)), option=1)
-
 
     def reheapify(self, index, option):
         """
@@ -56,9 +57,9 @@ class Heap:
             n = index
             stop_n = 0
         while not stop: 
-            parent = self.data[n]
-            left_child = self.data[2*n+1] if len(self.data)-1>=2*n+1 else None
-            right_child = self.data[2*n+2] if len(self.data)-1>=2*n+2 else None
+            parent = self.data[n].data
+            left_child = self.data[2*n+1].data if len(self.data)-1>=2*n+1 else None
+            right_child = self.data[2*n+2].data if len(self.data)-1>=2*n+2 else None
 
             toSwap = None            
 
@@ -92,37 +93,47 @@ class Heap:
     def swap(self, new, old):
         self.data[old], self.data[new] = self.data[new], self.data[old]
 
-    def __string__():
-        print(*self.data)
+    def __str__(self):
+        s = ''
+        for i in self.data:
+            temp = "Label: " + str(i.label) + " data: " + str(i.data) +"\n"
+            s += temp
+        return s
+
+def prim(start, graph):
+    #h = Heap()
+    print(graph)
+
+    distances = Heap()
+    for label in graph:
+        if label is not start:
+            node = Node(label, float('Inf'))
+        else:
+            node = Node(label, 0)
+        distances.insert(node)
+
+    from_to = {}
+
+    vertix = h.extract_min()
+    
+    #min 7:32  
+
+    return None
+
 
 def test():
-    h = Heap()
-    
-    h.insert(1)
-    print(h.data)
+    graph = {
+        'A' : {'B':3, 'D':1},
+        'B' : {'A':3, 'C':1, 'D':3},
+        'C' : {'B':1, 'D':1, 'F':4},
+        'D' : {'A':1, 'C':1, 'E':6},
+        'E' : {'C':5, 'D':6, 'F':2},
+        'F' : {'C':4, 'E':2}
+        }
 
-    for i in range(2,5):
-        h.insert(i)
-        print(h.data)
+    mst = prim('A', graph)
 
-
-    h.insert(0)
-    print(h.data)
-
-    h.insert(50)
-    print(h.data)
-
-    h.insert(-1)
-    print(h.data)
-
-    print(h.get_min())
-    print(h.get_max())
-    print(h.data)
-    print("getting root ", h.delete_root())
-    print("heap after deletion ", h.data)
-    h.delete_item(50)
-    print("Removing element 50")
-    print("Heap after deletion", h.data)
+    #assert
         
 if __name__=="__main__":
     test()

@@ -115,9 +115,3 @@ while visited.count(-1) < n_nodes:
     
 print(cost)
 
-
-
-
-
-
-
