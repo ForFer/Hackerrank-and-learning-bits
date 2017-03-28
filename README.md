@@ -48,6 +48,8 @@ List of important implementations:
 
 * [Linear regression](https://github.com/ForFer/Hackerrank/blob/master/implementation/linearRegression.py)
 
+* [Non linear regression](https://github.com/ForFer/Hackerrank/blob/master/implementation/nonLinearRegression.py)
+
 * [Support vector regression (non-linear)](https://github.com/ForFer/Hackerrank/blob/master/implementation/supportVectorRegression.py)
 
 ## Others

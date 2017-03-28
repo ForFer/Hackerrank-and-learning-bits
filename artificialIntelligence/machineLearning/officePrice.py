@@ -62,43 +62,51 @@ import numpy as np
 import matplotlib.pyplot as plt 
 
 
+from sklearn.preprocessing import PolynomialFeatures
 from sklearn import linear_model
-from sklearn.preprocessing import PolynomialFeatures as polyF
-from sklearn.pipeline import make_pipeline
-
-f, N = map(int, input().split())
-
-X = []
-y = []
-
-for _ in range(N):
-    data = list(map(float, input().split()))
-    x = [data[i] for i in range(f)]
-    X.append(x)
-    y.append(data[len(data)-1])    
-
-n = int(input())
-predict = []
-for _ in range(n):
-    data = list(map(float, input().split()))
-    predict.append(data)
-
-poly = polyF(degree=3)
-
-#Shape and sort data
-X.sort() 
-X = np.array(X)
-
-y = np.array(y).ravel()
-
-x = poly.fit_transform(X)
-
-clf = linear_model.LinearRegression()
-clf.fit(x, y)
 
 
+def Main():
+    f, N = map(int, input().split())
 
-print("X = ", x)
-print("Predict= ", predict)
-print("Prediction= ", clf.predict(predict))
+    X = []
+    y = []
 
+    for _ in range(N):
+        data = list(map(float, input().split()))
+        x = [data[i] for i in range(f)]
+        X.append(x)
+        #X.append(data[1])
+        y.append(data[len(data)-1])    
+
+    np_x = np.array(X)
+    np_y = np.array(y)
+    np_x = np.sort(np_x)
+    
+    n = int(input())
+    predict = []
+    for _ in range(n):
+        data = list(map(float, input().split()))
+        predict.append(data[0])
+
+    np_pre = np.array(predict).reshape(-1,1)
+
+    poly = PolynomialFeatures(degree = 4)
+
+    X_ = poly.fit_transform(np_x)
+    pre_ = poly.fit_transform(np_pre)
+    model = linear_model.LinearRegression()
+
+    print(type(X_))
+    print(type(pre_))
+    print(type(np_x))
+
+    model.fit(X_,np_y)
+    print(model)
+    y_predict = model.predict(pre_)
+
+#    print(y_predict)
+
+
+if __name__=="__main__":
+    Main()
