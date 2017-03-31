@@ -19,12 +19,32 @@ from numpy import array, sort
 # RAM: 8GB
 # OS: Ubuntu 14.04 x64
 
-def return_always_same():
-    return 10e4
+#TODO: MAke functions with each test, && make a main
 
-@lru_cache(maxsize=None)
-def return_always_same_cached():
-    return 10e4
+def memoize(f):
+    memo = {}
+    def helper(x):
+        if x not in memo:            
+            memo[x] = f(x)
+        return memo[x]
+    return helper
+
+def fibo_not_memo(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibo_not_memo(n-1) + fibo_not_memo(n-2)
+
+@memoize
+def fibo_memo(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibo_memo(n-1) + fibo_memo(n-2)
 
 #New way of creating a new dict, defaults 0 to every value
 d=defaultdict(int)
@@ -92,17 +112,17 @@ print("Elapsed time for sorting numpy.array (by default, quicksort): ", time()-t
 print("-----------------------")
 # Comparison of cached vs non-cached function
 # Restuls:
-# Elapsed time for non-cached function:  0.0120849609375
-# Elapsed time for cached function:  0.16783380508422852
+# Elapsed time for non-cached function:  29.250123977661133
+# Elapsed time for cached function:  0.0018606185913085938
 t = time()
-for _ in range(100000):
-    a = return_always_same()
-print("Elapsed time for non-cached function: ", time()-t)
+for _ in range(10000):
+    a = fibo_not_memo(20)
+print("Elapsed time for non-cached fibo function: ", time()-t)
 
 t = time()
-for _ in range(100000):
-    a = return_always_same_cached()
-print("Elapsed time for cached function: ", time()-t)
+for _ in range(10000):
+    a = fibo_memo(20)
+print("Elapsed time for cached fibo function: ", time()-t)
 
 
 print("-----------------------")
