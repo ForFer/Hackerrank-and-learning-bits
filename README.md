@@ -56,7 +56,7 @@ List of important implementations:
 
 * [Prime checker in O(sqrt{n}) ](https://github.com/ForFer/Hackerrank/blob/master/implementation/primeChecker.py)
 
-* [Idiomatic python](https://github.com/ForFer/Hackerrank/blob/master/implementation/idiomaticPython.py) [Source](https://www.youtube.com/watch?v=OSGv2VnC0go)
+* [Idiomatic python](https://github.com/ForFer/Hackerrank/blob/master/implementation/idiomaticPython.py) --> [source](https://www.youtube.com/watch?v=OSGv2VnC0go)
 
 * [Circle recognition in img](https://github.com/ForFer/Hackerrank/blob/master/artificialIntelligence/digitalImageAnalysis/ball_spotting.py)
 
