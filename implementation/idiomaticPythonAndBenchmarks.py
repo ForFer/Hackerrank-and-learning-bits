@@ -46,15 +46,15 @@ def fibo_memo(n):
     else:
         return fibo_memo(n-1) + fibo_memo(n-2)
 
-#New way of creating a new dict, defaults 0 to every value
+# New way of creating a new dict, defaults 0 to every value
 d=defaultdict(int)
 for i in range(100000):
     d[i] += 1
 
-#DICT .items() comparative 
+# DICT .items() comparative 
 # Results: 
-#Elapsed time for k in d:  0.010937213897705078
-#Elapsed time for d.items:  0.010824441909790039
+# Elapsed time for k in d:  0.010937213897705078
+# Elapsed time for d.items:  0.010824441909790039
 t = time()
 for k in d:
     temp = k
@@ -99,6 +99,7 @@ for j in range(50000):
     array[j] = j*2
 print("Elapsed time for numpy.array: ", time()-t)
 
+print("-----------------------")
 t=time()
 big_list.sort()
 print("Elapsed time for sorting list: ", time()-t)
@@ -110,7 +111,7 @@ array = sort(array) #, kind='mergesort') kind='heapsort'
 print("Elapsed time for sorting numpy.array (by default, quicksort): ", time()-t)
 
 print("-----------------------")
-# Comparison of cached vs non-cached function
+# Comparison of cached vs non-cached function (memoized vs non-memo)
 # Restuls:
 # Elapsed time for non-cached function:  29.250123977661133
 # Elapsed time for cached function:  0.0018606185913085938

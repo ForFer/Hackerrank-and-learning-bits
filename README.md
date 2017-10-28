@@ -20,7 +20,7 @@ List of important implementations:
 
 * [Fenwick/Binary indexed tree (Clear, with examples)](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/implementation/BITtree.py)
 
-* [Fenwick/Binary indexed tree (with a hackerrank problem)](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/dataStructures/tree/directConnection.py)
+* [Fenwick/Binary indexed tree (with a hackerrank problem)](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/dataStructures/tree/directConnections.py)
 
 * [Heap (min)](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/implementation/heap.py)
 
@@ -56,7 +56,7 @@ List of important implementations:
 
 * [Prime checker in O(sqrt{n}) ](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/implementation/primeChecker.py)
 
-* [Idiomatic python](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/implementation/idiomaticPython.py) --> [source](https://www.youtube.com/watch?v=OSGv2VnC0go)
+* [Idiomatic python](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/implementation/idiomaticPythonAndBenchmarks.py) --> [source](https://www.youtube.com/watch?v=OSGv2VnC0go)
 
 * [Circle recognition in img](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/artificialIntelligence/digitalImageAnalysis/ball_spotting.py)
 
