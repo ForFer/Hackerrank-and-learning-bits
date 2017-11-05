@@ -7,6 +7,7 @@ Most of the solutions (if not all) will be in python.
 List of important implementations:
 
 ## Sorting
+
 * [Quicksort](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/algorithms/sorting/quicksort2Sorting.py)
 
 * [Insertion sort](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/algorithms/sorting/insertionSortPart2.py)
@@ -15,7 +16,10 @@ List of important implementations:
 
 * [Heapsort](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/implementation/heapsort.py)
 
+* [Mergesort](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/crackingTheCodingInterview/mergeSort.py)
+
 ## Trees
+
 * [Binary tree](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/implementation/btree.py)
 
 * [Fenwick/Binary indexed tree (Clear, with examples)](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/implementation/BITtree.py)
@@ -29,6 +33,7 @@ List of important implementations:
 * [Heap for Prim's Algorithm {On Progress}](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/implementation/primHeap.py)
 
 ## Graphs
+
 * [Kruskal's algorithm](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/algorithms/graphTheory/kruskal.py)
 
 * [Graph implementation using classes](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/algorithms/graphTheory/bfs.py)
@@ -44,6 +49,7 @@ List of important implementations:
 * [Dijkstra](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/implementation/dijkstra.py)
 
 ## Machine learning
+
 * [Classification and Regrestion Tree (CART)](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/artificialIntelligence/machineLearning/laptopBatteryLife.py)
 
 * [Linear regression](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/implementation/linearRegression.py)
@@ -54,10 +60,12 @@ List of important implementations:
 
 ## Others
 
-* [Prime checker in O(sqrt{n}) ](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/implementation/primeChecker.py)
-
 * [Idiomatic python](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/implementation/idiomaticPythonAndBenchmarks.py) --> [source](https://www.youtube.com/watch?v=OSGv2VnC0go)
+
+* [Prime checker in O(sqrt{n}) ](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/implementation/primeChecker.py)
 
 * [Circle recognition in img](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/artificialIntelligence/digitalImageAnalysis/ball_spotting.py)
 
 * [Disjoint set implementation](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/implementation/disjointSet.py)
+
+* [Detect cycle in linked list](https://github.com/ForFer/Hackerrank-and-learning-bits/blob/master/crackingTheCodingInterview/linkedListCycle.py)
