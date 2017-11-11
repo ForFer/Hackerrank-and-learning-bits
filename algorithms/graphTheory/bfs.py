@@ -65,42 +65,45 @@ Sample Output
 2
 """
 
-class Graph():
-    def __init__(self, g_dict=None):
-        if not g_dict:
-            g_dict = {}
-        self.g_dict = g_dict
+from collections import deque
 
-    def insert(self, parent, node):
-        if parent not in self.g_dict:
-            self.g_dict[parent] = [node]
+class Graph():
+    def __init__(self, graph_dict=None):
+        if not graph_dict:
+            graph_dict = {}
+        self.graph_dict = graph_dict
+
+    def insert(self, parent, child):
+        if parent not in self.graph_dict:
+            self.graph_dict[parent] = [child]
         else:
-            self.g_dict[parent].append(node)
+            self.graph_dict[parent].append(child)
 
     def __str__(self):
         res = ''
-        for k in self.g_dict:
+        for k in self.graph_dict:
             res+= str(k) + ": {"
-            for n in self.g_dict[k]:
+            for n in self.graph_dict[k]:
                 res+= str(n) + ", "
             res += "} \n"
         return res
 
-    def distances(self, start):
+    def distances(self, start, distance):
 
-        q = [start]
-        d = {start:0}
+        q = deque([start])
 
         while q:
-            u = q.pop()
-            for v in self.g_dict[u]:
-                if v not in d:
-                    d[v] = d[u]+6
+            current = q.popleft()
+            for v in self.graph_dict[current]:
+                if distance[v] == 0:
+                    distance[v] = distance[current] + 6
                     q.append(v)
-        return d
+
+        del distance[start]
+        return distance
 
     def __getitem__(self, index):
-        return self.g_dict[index]
+        return self.graph_dict[index]
 
 
 q = int(input())
@@ -111,33 +114,21 @@ for _ in range(q):
     
     nodes,edges = map(int, input().split())
     myDict = {}
+    distances = {}
     for i in range(1, nodes+1):
         myDict[i] = []
+        distances[i] = 0
     myGraph = Graph(myDict)
     
 
     for _ in range(edges):
         p,c = map(int,input().split())
-        if c not in myGraph[p]:
-            myGraph.insert(p,c)
-            myGraph.insert(c,p)
+        myGraph.insert(p,c)
+        myGraph.insert(c,p)
 
     start = int(input())
 
-    if start > nodes or start < 0:
-        dis = [-1 for _ in range(nodes)]
-        res.append(dis)
-        continue
+    d = myGraph.distances(start, distances) 
+    distances = [x if x > 0 else -1 for k,x in d.items()]
 
-    d = myGraph.distances(start)
-    dis = []
-    for i in range(1,nodes+1):
-        if i!=start:
-            if i in d:
-                dis.append(d[i])    
-            else:
-                dis.append(-1)
-    res.append(dis)
-
-for r in res:
-    print(*r)
+    print(*distances)
