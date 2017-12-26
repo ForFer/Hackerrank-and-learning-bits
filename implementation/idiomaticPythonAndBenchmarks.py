@@ -141,9 +141,9 @@ s = ''.join(str(i) for i in range(100000))
 print("Elapsed time for join concatenation of str: ", time()-t)
 
 
-month_codes = dict((fn(i+1), code)
-    for i, code in enumerate('FGHJKMNQUVXZ')
-    for fn in (int, str))
+#month_codes = dict((fn(i+1), code)
+#    for i, code in enumerate('FGHJKMNQUVXZ')
+#    for fn in (int, str))
 
 
 
