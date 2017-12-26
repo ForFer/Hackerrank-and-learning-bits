@@ -9,7 +9,8 @@ Test for the tree implementation
 """
 
 from tree import Node, Tree
-from preorderTraversal import preOrder
+from treeTraversal import preOrder, postOrder, inOrder
+
 
 def test(root):
     assert(root.set_left(1) == -1)
@@ -22,8 +23,16 @@ def print_test_tree(root):
 
 def test_preorder(root):
     preorder = preOrder(root)
-    assert(preorder == "1 2 4 5 3 6 7")
+    assert(preorder == [1, 2, 4, 5, 3, 6, 7])
 
+
+def test_postorder(root):
+    postorder = postOrder(root)
+    assert(postorder == [4, 5, 2, 6, 7, 3, 1])
+
+def test_inorder(root):
+    inorder = inOrder(root)
+    assert(inorder == [4, 2, 5, 1, 6, 3, 7])
 
 
 if __name__ == "__main__":
@@ -40,5 +49,7 @@ if __name__ == "__main__":
   
     test(root) 
     test_preorder(root)    
+    test_postorder(root)    
+    test_inorder(root)    
     
     #print_test_tree(root)

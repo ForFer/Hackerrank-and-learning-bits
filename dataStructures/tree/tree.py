@@ -5,7 +5,7 @@ Hackerrank: F0rz4
 """
 
 """
-Unordered binary Tree implementation to be used by other python instances on this folder
+Binary Tree implementation to be used by other python instances on this folder
 """
 
 class Tree:
