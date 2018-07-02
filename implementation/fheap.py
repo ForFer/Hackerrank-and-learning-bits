@@ -116,9 +116,6 @@ class Heap:
     def get_min(self):
         return self.min_element
 
-  
-
-    #TODO: is this even correct??????????
     def swap_root_list(self, new, old):
         self.root_list[old], self.root_list[new] = self.root_list[new], \
             self.root_list[old]

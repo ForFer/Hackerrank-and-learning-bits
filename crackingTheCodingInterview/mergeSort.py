@@ -29,7 +29,8 @@ def merge(A, low, middle, high):
     d1 = deque(A[low:middle+1])
     d2 = deque(A[middle+1:high+1])
      
-    while( d1 and d2 ):
+    while d1 and d2 :
+        print(A)
         if d1[0] <= d2[0]:
             A[i] = d1.popleft()
             i += 1
@@ -38,9 +39,11 @@ def merge(A, low, middle, high):
             A[i] = d2.popleft()
             i += 1
     while d1:
+        print(A)
         A[i] = d1.popleft()
         i += 1
     while d2:
+        print(A)
         A[i] = d2.popleft()
         i += 1
 
@@ -52,5 +55,6 @@ for _ in range(n):
     dataset = list(map(int, input().split()))
     
     mergesort(dataset, 0, m-1, )
+    print("final:",dataset)
     all_swaps.append(swaps)
 print(*all_swaps)
